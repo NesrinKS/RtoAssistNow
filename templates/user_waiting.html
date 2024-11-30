@@ -1,0 +1,50 @@
+{% include 'user_header.html' %}
+
+<head>
+    <title>License Status</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #0070e0;
+            color: #ffffff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .container {
+            text-align: center;
+        }
+        p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #0070e0;
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0052a6;
+        }
+    </style>
+</head>
+<body>
+ <form method="post"> 
+    <div class="container">
+        <p>Wait for MVD verifying your documents</p>
+        <input type="submit" name="license_status" value="Go to License Status">
+    </div>
+</body>
+</form>  
+
+{% include 'footer.html' %}

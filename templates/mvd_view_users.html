@@ -1,0 +1,48 @@
+{% include 'mvd_header.html' %}
+<h2 style="text-align: center">REGISTERED USERS DETAILS</h2>
+<form method="post">
+<table class="table">
+  <tr><th>Districts</th>
+      <td><input type="text" name="districts" class="form-control"></td>
+    </tr>
+    <tr>
+      <td style=" text-align: center" colspan="2"><input type="submit" name="districts" value="Search" class="btn btn-info"></td>
+    </tr>
+</table>
+</form>
+
+<table class="table">
+	<tr>
+
+	<th>FIRST NAME</th>
+	<th>LAST NAME</th>
+	<th>DOB</th>
+	<th>GENDER</th>
+	<th>HOUSE</th>
+	<th>PLACE</th>
+	<th>PIN-CODE</th>
+	<th>BLOOD GROUP</th>
+    
+    
+    </tr>
+
+    {% for r in data['view'] %}
+    <tr>
+    	<td>{{r['first_name']}}</td>
+    	<td>{{r['last_name']}}</td>
+    	<td>{{r['dob']}}</td>
+    	<td>{{r['gender']}}</td>
+    	<td>{{r['house_name']}}</td>
+    	<td>{{r['place']}}</td>
+    	<td>{{r['pincode']}}</td>
+    	<td>{{r['blood_group']}}</td>
+       
+        
+    </tr>
+   
+		{%endfor%}
+
+</table>
+
+
+{% include 'footer.html' %}

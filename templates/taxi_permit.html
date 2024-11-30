@@ -1,0 +1,42 @@
+{% include 'user_header.html' %}
+<br><br>
+<h1 style="text-align: center;">Application for Taxi Permit</h1><br>
+<br><br>
+<form method="post">
+	<table class="table">
+		<tr>
+			
+			<th>Vehicle Type</th>
+			<th>Brand Name</th>
+			<th>Model Name</th>
+			<th>No.of Seats</th>
+			<th>Color</th>
+			<th>Fuel type</th>
+			
+			
+			
+		</tr>
+		{% for r in data['taxi'] %}
+
+		<tr>
+			
+			<td>{{r['vehicle_type']}}</td>
+			<td>{{r['brand_name']}}</td>
+			<td>{{r['model_name']}}</td>
+			<td>{{r['no_of_seats']}}</td>
+			<td>{{r['color']}}</td>
+			<td>{{r['fuel_type']}}</td>
+			
+			<td><a href="?action=viewtaxi&vehicle_id={{r['vehicle_id']}}" class="btn btn-info">apply taxi permit</a></td>
+		
+			<td><a href="userview_taxi_status?vehicle_id={{r['vehicle_id']}}" class="btn btn-info">View Status</a></td>
+			<td><a href="userview_taxi_permit?vehicle_id={{r['vehicle_id']}}" class="btn btn-info">View taxi permit</a></td>
+			
+			
+		</tr>
+
+		{%endfor%}
+	</table>
+</form><br><br><br><br><br> 
+
+{% include 'footer.html' %}

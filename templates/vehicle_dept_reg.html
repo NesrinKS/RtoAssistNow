@@ -1,0 +1,203 @@
+
+
+  
+  <!-- <style>
+    /* Reset default styles and apply a background color */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    /* Style the header */
+    header {
+      background-color: #524250; /* Header background color */
+      color: #fff; /* Text color in the header */
+      padding: 10px;
+      text-align: center;
+    }
+
+    /* Style the main content container */
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Style the form elements */
+    form {
+      margin-top: 20px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+
+    /* Style the links in the table */
+    table a {
+      text-decoration: none;
+      color: #007bff; /* Link color */
+    }
+
+    table a:hover {
+      text-decoration: underline;
+    }
+
+    /* Style the footer */
+    footer {
+      text-align: center;
+      padding: 10px;
+      background-color: #524250; /* Footer background color */
+      color: #fff; /* Text color in the footer */
+    }
+  </style> -->
+
+  
+  {% include 'admin_header.html' %}
+
+  <style type="text/css">
+  	th,td{
+  		padding: 20px;
+  	}
+  </style>
+<center>
+  <div class="container">
+    {% if data['up'] %}
+    <h3>Update Motor Vehicle Department Details</h3>
+    <!-- Update form code here -->
+    <form method="post">
+		<table class="table">
+			<tr>
+				<th>Place</th>
+				<td><select name="place" required="" class="form-control">
+                            <option selected="" selected disabled hidden>Select</option>
+                            <option value="Alappuzha">Alappuzha</option>
+                            <option value="Ernakulam">Ernakulam</option>
+                            <option value="Kozhikode">Kozhikode</option>
+                            <option value="Palakkad">Palakkad</option>
+                            <option value="Kollam">Kollam</option>
+                            <option value="Kannur">Kannur</option>
+                            <option value="Kasaragod">Kasaragod</option>
+                            <option value="Idukki">Idukki</option>
+                            <option value="Kottayam">Kottayam</option>
+                            <option value="Thrissur">Thrissur</option>
+                            <option value="Pathanamthitta">Pathanamthitta</option>
+                            <option value="Malappuram">Malappuram</option>
+                            <option value="Wayanad">Wayanad</option>
+                        <option value="Thiruvananthapuram">Thiruvananthapuram</option>
+                        </select></td>
+			</tr>
+			<tr>
+				<th>RT Number</th>
+				<td><input type="text" name="rtnumber" value="{{data['up'][0]['rt_number']}}" required="" class="form-control"></td>
+			</tr>
+			<tr>
+				<th>Phone</th>
+				<td><input type="text" name="phone" value="{{data['up'][0]['phone']}}" required="" class="form-control" minlength="10" maxlength="10"></td>
+			</tr>
+			<tr>
+				<th>Email</th>
+				<td><input type="text" name="email" value="{{data['up'][0]['email']}}" required="" class="form-control"></td>
+			</tr>
+			<tr>
+				<td style=" text-align: center" colspan="2"><input type="submit" name="update" value="ADD" class="btn btn-success"></td>
+			</tr>
+			
+		</table>
+	</form>
+    {% else %}
+   
+   
+    <!-- Registration form code here -->
+    
+    <form method="post">
+    	 <h1 style="color: black">Motor Vehicle Department Registration</h1>
+		<table class="table">
+			<tr>
+				<th>place</th>
+				<td><select name="place" required="" class="form-control">
+                          <option selected="" selected disabled hidden>Select</option>
+                            <option value="Alappuzha">Alappuzha</option>
+                            <option value="Ernakulam">Ernakulam</option>
+                            <option value="Kozhikode">Kozhikode</option>
+                            <option value="Palakkad">Palakkad</option>
+                            <option value="Kollam">Kollam</option>
+                            <option value="Kannur">Kannur</option>
+                            <option value="Kasaragod">Kasaragod</option>
+                            <option value="Idukki">Idukki</option>
+                            <option value="Kottayam">Kottayam</option>
+                            <option value="Thrissur">Thrissur</option>
+                            <option value="Pathanamthitta">Pathanamthitta</option>
+                            <option value="Malappuram">Malappuram</option>
+                            <option value="Wayanad">Wayanad</option>
+                        <option value="Thiruvananthapuram">Thiruvananthapuram</option>
+                        </select></td>
+			</tr>
+			<tr>
+				<th>RT number</th>
+				<td><input type="text" name="rtnumber" required="" class="form-control"></td>
+			</tr>
+			<tr>
+				<th>phone</th>
+				<td><input type="text" name="phone" required="" class="form-control" minlength="10" maxlength="10"></td>
+			</tr>
+			<tr>
+				<th>email</th>
+				<td><input type="email" name="email" required="" class="form-control"></td>
+			</tr>
+			<tr>
+				<th>username</th>
+				<td><input type="text" name="uname" required="" class="form-control"></td>
+			</tr>
+			<tr>
+				<th>password</th>
+				<td><input type="password" name="pass" required="" class="form-control"></td>
+			</tr>
+			<tr>
+				<td style=" text-align: center" colspan="2">
+				<input type="submit" name="add" value="register" class="btn btn-success"></td>
+			</tr>
+		</table>
+	</form>
+    {% endif %}
+
+    <h2>Motor Vehicle Department Details</h2>
+    <!-- Table code for displaying department details here -->
+    <table class="table">
+		<tr>
+			<th>PLACE</th>
+			<th>RT NUMBER</th>
+			<th>PHONE</th>
+			<th>E-MAIL</th>
+			<th>USERNAME</th>
+		</tr>
+		{% for r in data['view'] %}
+		<tr>
+			<td>{{r['place']}}</td>
+			<td>{{r['rt_number']}}</td>
+			<td>{{r['phone']}}</td>
+			<td>{{r['email']}}</td>
+			<td>{{r['username']}}</td>
+			<td><a href="?action=delete&mvd_id={{r['mvd_id']}}" class="btn btn-danger">Delete</a></td>
+			<td><a href="?action=update&mvd_id={{r['mvd_id']}}" class="btn btn-success">Update</a></td>
+		</tr>
+		{%endfor%}
+
+	</table>
+  </div>
+</center>
+  <footer>
+    &copy; 2023 Admin Dashboard
+  </footer>
+</body>
+</html>

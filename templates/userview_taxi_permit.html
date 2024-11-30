@@ -1,0 +1,23 @@
+{% include 'user_header.html' %}
+
+<h1 style="text-align: center;">View Taxi Permit</h1>
+    <table class="table">
+      <tr>
+        <th>From date</th>
+        <th>to date</th>
+      </tr>
+      {% for row in data['view']%}
+      <tr>
+        <td>{{row['from_date']}}</td>
+        <td>{{row['to_date']}}</td>
+      
+       <td><a href="?action=renewtaxi&vehicle_id={{row['vehicle_id']}}" class="btn btn-success">Renew Taxipermit</a></td>
+      
+       
+      
+
+        
+      </tr>
+      {%endfor%}
+    </table>
+{% include 'footer.html'%}

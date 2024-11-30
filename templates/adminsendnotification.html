@@ -1,0 +1,60 @@
+{% include 'adminheader.html' %}
+
+<div class="ex">
+
+<center>
+  <form method="post" style="margin-top: 70px">
+  
+        <h2 style="font-size: 40px;color: white;font-weight:bold;">
+   Send Notifications </h2>
+
+
+                 <table class="table" style="width:500px;color: white;margin-top: 3em">
+
+<table class="table" style="width: 500px;color: white;">
+ 
+  <tr>
+    <th>Description</th>
+    <td><input type="text" name="desc" required class="form-control"></td>
+  </tr>
+  
+ 
+  <tr>
+    <td align="center" colspan="2"><input type="submit" name="add" value="send" class="btn btn-success"></td>
+  </tr>
+</table>
+
+
+
+           
+<h1 style="font-size: 40px;font-weight: bold;color: white;">View Notifications </h1>
+
+
+<table class="table" style="width: 500px;color: white;">
+      <tr>
+        <th>Description</th>
+        <th>Date</th>
+        
+      </tr>
+
+    {%for row in data['view']%}
+      <tr>
+      <td>{{row['desc'] }}</td>
+      <td>{{row['datetime'] }}</td>
+      
+{%endfor%}
+
+
+
+
+     
+    </table>
+   
+        
+    </center>
+</form>      
+</div>
+
+
+
+{% include 'footer.html' %}

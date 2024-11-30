@@ -1,0 +1,69 @@
+{% include 'user_header.html' %}
+
+<head>
+    <title>License Status</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #0070e0;
+            color: #ffffff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .container {
+            text-align: center;
+        }
+        p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #0070e0;
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0052a6;
+        }
+    </style>
+</head>
+<body>
+    <pre>
+
+
+
+
+    </pre>
+ <form method="post"> 
+    <div class="container">
+       
+        {% if data['view']%}
+        
+        <th>click to pay</th>
+        <td><a href="user_license_payment?license_request_id={{data['license_request_id']}}&user_id={{data['user_id']}}">pay</a></td>
+
+    </div>
+    {% endif%}
+   
+</body>
+</form>  
+
+<pre>
+
+
+
+
+    </pre>
+
+{% include 'footer.html' %}

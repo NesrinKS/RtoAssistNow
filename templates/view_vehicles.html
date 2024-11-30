@@ -1,0 +1,53 @@
+{% include 'mvd_header.html' %}
+
+
+<h1 style="text-align: center;">View vehicles</h1>
+<form method="post">
+<table class="table">
+  <tr><th>Districts</th>
+      <td><input type="text" name="districts" required="" class="form-control"></td>
+    </tr>
+    <tr>
+      <td style=" text-align: center" colspan="2"><input type="submit" name="districts" value="Search" class="btn btn-success"></td>
+    </tr>
+</table>
+</form>
+<form method="post">
+	<table class="table">
+		<tr>
+			
+			<th>User id</th>
+			
+			<th>Vehicle Type</th>
+			<th>Brand Name</th>
+			<th>Model Name</th>
+			<th>No.of Seats</th>
+			<th>Color</th>
+			<th>Fuel type</th>
+			<th>User name</th>
+			<th>place</th>
+			
+			
+		</tr>
+		{% for r in data['view'] %}
+
+		<tr>
+			
+			<td>{{r['user_id']}}</td>
+			
+			<td>{{r['vehicle_type']}}</td>
+			<td>{{r['brand_name']}}</td>
+			<td>{{r['model_name']}}</td>
+			<td>{{r['no_of_seats']}}</td>
+			<td>{{r['color']}}</td>
+			<td>{{r['fuel_type']}}</td>
+			<td>{{r['first_name']}}</td>
+			<td>{{r['place']}}</td>
+			
+		</tr>
+
+		{%endfor%}
+	</table>
+</form>
+
+{% include 'footer.html' %}

@@ -1,0 +1,46 @@
+{% include 'mvd_header.html' %}
+
+<h2 style="text-align: center;">LEARNERS LICENSE REQUESTS</h2>
+
+
+
+<table class="table">
+	<tr>
+		<th>Name</th>
+		<th>Place</th>
+		<th>Date</th>
+		<th>Status</th>
+		<th>License for</th>
+		
+
+	{% for r in data['view'] %}
+
+	<tr>
+		<td>{{r['first_name']}}</td>
+		<td>{{r['place']}}</td>
+		<td>{{r['datetime']}}</td>
+		<td>{{r['status']}}</td>
+		<td>{{r['licensecateg']}}</td>
+	<td><a href="mvd_view_certificates?license_request_id={{r['license_request_id']}}" class="btn btn-info">
+		view certificates</a></td>
+		{% if r['status']=='approved'%}
+		<td><a href="schedule_learners?license_request_id={{r['license_request_id']}}&user_id={{r['user_id']}}" class="btn btn-info">Schedule Learners Exam</a></td>
+		{% endif %}
+		{% if r['Status']=='passed'%}
+		
+		<td><a href="schedule_driving_test?license_request_id={{r['license_request_id']}}" class="btn btn-info">Schedule Driving Test</a></td>
+		{% endif %}
+	
+		{%if r['status']=="pending"%}
+		<td><a href="?action=approve&license_request_id={{r['license_request_id']}}" class="btn btn-success">APPROVE</a></td>
+		<td><a href="?action=reject&license_request_id={{r['license_request_id']}}" class="btn btn-danger">REJECT</a></td>
+
+		{%endif%}
+	{%endfor%}
+
+	</tr>
+
+</table>
+
+
+{% include 'footer.html' %}

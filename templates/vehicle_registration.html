@@ -1,0 +1,118 @@
+{% include 'user_header.html' %}
+
+<!-- 
+<head>
+    <title>Application for Vehicle Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        select, input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body> -->
+
+    <style type="text/css">
+        th,td{
+            padding: 20px;
+        }
+    </style>
+    <div class="container">
+        <br><br>
+        <h1 style="text-align: center;">Application for Vehicle Registration</h1><br><br>
+        <form method="post">
+            <table class="table">
+                <tr>
+                    <th>Vehicle Type</th>
+                    <td>
+                        <select id="vehicle-type" name="type" required="" class="form-control">
+                            <option selected="" selected disabled hidden>Select</option>
+                            <option value="car">Car</option>
+                            <option value="motorcycle">Motorcycle</option>
+                            <option value="truck">Truck</option>
+                            <option value="suv">SUV</option>
+                            <option value="van">Van</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Brand Name</th>
+                    <td><input type="text" name="name" required="" class="form-control"></td>
+                </tr>
+                <tr>
+                    <th>Model Name</th>
+                    <td><input type="text" name="mname" required="" class="form-control"></td>
+                </tr>
+                <tr>
+                    <th>No. of Seats</th>
+                    <td><input type="text" name="no" required="" class="form-control"></td>
+                </tr>
+                <tr>
+                    <th>Color</th>
+                    <td><input type="text" name="color" required="" class="form-control"></td>
+                </tr>
+                <tr>
+                    <th>Fuel Type</th>
+                    <td><input type="text" name="ftype" required="" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;" colspan="2">
+                        <input type="submit" name="add" value="ADD" class="btn btn-success">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+
+
+
+
+{% include 'footer.html' %}

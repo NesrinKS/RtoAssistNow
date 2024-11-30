@@ -1,0 +1,62 @@
+{% include 'user_header.html' %}
+<center>
+<form method="post">
+
+    <h2 style="color: rgb(0, 0, 0);"> Payment </h2><br>
+  
+ 
+
+    <table style="width: 800px; height: 300px; border-radius: 5px;" class="table" id="b"> 
+
+      <tr> 
+        <td>PAYMENT DETAILS</td> 
+        <td colspan="2" align="right"></td>
+      </tr>  
+
+
+      <tr> 
+        <th>CARD NUMBER</th>
+                   <td>  <input type="text" placeholder="CARD NUMBER"  class="form-control" maxlength="16" required pattern="[0-9]{16}" title="Enter 16 digit CARD NUMBER number">
+        </td> 
+      </tr>
+
+
+      <tr> 
+        <th>CVV</th> 
+         <td> <input type="text" placeholder="CVV"  class="form-control" maxlength="3" required pattern="[0-9]{3}" title="Enter 3 digit CV number">
+        </td> </tr>
+        <tr>
+
+        <th>Expiry DATE</th>
+         
+         <td> <input type="date" placeholder="MM/YY" id="date" min="date('Y-m-d')"  class="form-control" required pattern="[0-9,/]{5}" name="edate" title="Enter month and year"> 
+        </td>
+      </tr>
+
+      <tr> 
+        <th> HOLDER </th>
+          <td><input type="text" placeholder="Name on card" pattern="[A-Za-z ]+$"  class="form-control" data-valid='only-text' required > 
+        </td>
+      </tr>
+      <tr>
+        <th>Amount</th>
+                  <td><input type="text" name="amount" readonly="" value="5000" required  class="form-control"></td>
+
+      </tr>
+            
+
+        <tr>
+          <td align="center" colspan="2"><input type="submit" name="payment" value="PAYMENT" class="btn btn-success"></td>
+        </tr>
+
+    </table>
+
+  </div>
+</form>
+
+</center>
+<script>
+        // JavaScript to set the minimum date to the current date
+        document.getElementById('date').setAttribute('min', new Date().toISOString().split("T")[0]);
+    </script>
+{% include 'footer.html'%}

@@ -1,0 +1,78 @@
+{% include 'user_header.html' %}
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            padding: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        /* Style table header */
+        th {
+            background-color: #333;
+            color: white;
+        }
+
+        /* Style even rows with a background color */
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body> -->
+    <div class="container">
+        <h1 style="text-align: center;">Notifications</h1>
+        <form>
+            <table class="table">
+                <tr>
+                    <th>Notification</th>
+                    <th>Date & Time</th>
+                </tr>
+                {% for r in data['not'] %}
+                <tr>
+                    <td>{{ r['desc'] }}</td>
+                    <td>{{ r['datetime'] }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </form>
+    </div>
+</body>
+</html>
+
+
+{% include 'footer.html' %}

@@ -1,0 +1,30 @@
+{% include 'mvd_header.html' %}
+
+<h1 style="text-align: center;">license</h1>
+<form method="post">
+	<table class="table">
+		<tr>
+			<th>license number</th>
+			<td><input type="text" name="licenseno" required="" class="form-control"></td>
+		</tr>
+		<!-- <tr>
+			<th>license for</th>
+			<td><select name="lic_for" required="" class="form-control">
+				<option>Select</option>
+				<option value="motor cycle with gear">Motor cycle with gear</option>
+				<option value="motor cycle without gear	">Motor cycle without gear</option>
+				<option value="light motor vehicle">Light motor vehicle</option>
+				<option value="heavy motor vehicle">Heavy motor vehicle</option>
+			</select></td>
+		</tr> -->
+		<tr>
+			<th>valid upto</th>
+			<td><input type="date" name="valid" required="" class="form-control"></td>
+		</tr>
+		<tr>
+			<td style="text-align: center;" colspan="2"><input type="submit" name="add" class="btn btn-success"></td>
+		</tr>
+	</table>
+</form>
+
+{% include 'footer.html'%}

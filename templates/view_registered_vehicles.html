@@ -1,0 +1,103 @@
+{% include 'user_header.html' %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registered Vehicles</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            padding: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #333;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+        }
+
+        .table-container {
+            padding: 20px;
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007BFF;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="table-container">
+        <h1 style="text-align: center;">Registered Vehicles</h1>
+        <form>
+            <table border="1">
+                <tr>
+                    <th>Vehicle Type</th>
+                    <th>Brand Name</th>
+                    <th>Model Name</th>
+                    <th>No. of Seats</th>
+                    <th>Color</th>
+                    
+                    <th>Inspection Date</th>
+                    <th>Vehicle Number</th>
+                    <th>Number Status</th>
+                </tr>
+                {% for r in data['vehicle'] %}
+                <tr>
+                    <td>{{ r['vehicle_type'] }}</td>
+                    <td>{{ r['brand_name'] }}</td>
+                    <td>{{ r['model_name'] }}</td>
+                    <td>{{ r['no_of_seats'] }}</td>
+                    <td>{{ r['color'] }}</td>
+                    
+                    <td>{{ r['inspection_date'] }}</td>
+                    <td>{{ r['vehicle_number'] }}</td>
+                    <td>{{ r['number_status'] }}</td>
+                   <!--  <td><a href="user_payment?vehicle_id={{r['vehicle_id']}}&user_id={{r['user_id']}}">Pay</a></td> -->
+                </tr>
+                {% endfor %}
+            </table>
+        </form>
+    </div>
+</body>
+</html>
+
+<br><br><br> <br><br>
+
+
+{% include 'footer.html' %}

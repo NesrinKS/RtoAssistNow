@@ -1,0 +1,37 @@
+{% include 'mvd_header.html' %}
+
+<h1 style="text-align: center;">Taxi Permit Requests</h1>
+<form method="post">
+	<table class="table">
+		<tr>
+			<th>Vehicle id</th>
+			<th>Requested Date</th>
+			<th>Status</th>
+		</tr>
+		{% for r in data['taxi'] %}
+
+		<tr>
+			<td>{{r['vehicle_id']}}</td>
+			<td>{{r['requested_date']}}</td>
+			<td>{{r['status']}}</td>
+			{%if r['status']=="pending"%}
+			<td><a href="?action=v_approve&vehicle_id={{r['vehicle_id']}}" class="btn btn-success">Approve</a></td>
+			<td><a href="?action=v_reject&vehicle_id={{r['vehicle_id']}}" class="btn btn-danger">Reject</a></td>
+			{%endif%}
+			{%if r['status']=='renew'%}
+			<td><a href="?action=approve&vehicle_id={{r['vehicle_id']}}" class="btn btn-success">Approve</a></td>
+			<td><a href="?action=reject&vehicle_id={{r['vehicle_id']}}" class="btn btn-danger">Reject</a></td>
+			{%endif%}
+
+			<!-- {% if r['status']=='approved'%}
+			<td><a href="mvd_taxipermit?vehicle_id={{r['vehicle_id']}}" class="btn btn-secondary">taxi permit</a></td>
+			{% endif %} -->
+		</tr>
+		{%endfor%}
+		
+	</table>
+</form>
+
+<br><br><br><br>
+
+{% include 'footer.html' %}

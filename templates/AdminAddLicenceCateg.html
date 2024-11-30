@@ -1,0 +1,69 @@
+{% include 'admin_header.html' %}
+<CENTER>
+
+<h1 style="color: black">Add license category</h1>
+{% if data['updatecategorys'] %}
+
+<form method="post">
+	<table class="table">
+		<tr>
+			<th>Category</th>
+			<td><select name="lic_categ" required="" class="form-control">
+				<option value="{{data['updatecategorys'][0]['licensecateg']}}">{{data['updatecategorys'][0]['licensecateg']}}</option>
+				<option value="motor cycle with gear">Motor cycle with gear</option>
+				<option value="motor cycle without gear	">Motor cycle without gear</option>
+				<option value="light motor vehicle">Light motor vehicle</option>
+				<option value="heavy motor vehicle">Heavy motor vehicle</option>
+				
+			</select></td>
+		</tr>
+		<tr>	
+			<th>Amount</th>
+			<td><input type="text" name="amount" required="" class="form-control" value="{{data['updatecategorys'][0]['amount']}}" ></td>
+		</tr>
+
+		
+		<tr>
+			<td style=" text-align: center" colspan="2"><input type="submit" name="update" value="add" class="btn btn-success"></td>
+		</tr>
+		
+	</table>
+{% else %}
+<form method="post">
+	<table class="table">
+		<tr>
+			<th>Category</th>
+			<td><input type="text" name="lic_categ" required="" class="form-control">
+			</td>
+		</tr>
+		<tr>	
+			<th>Amount</th>
+			<td><input type="text" name="amount" required="" class="form-control"></td>
+		</tr>
+		<tr>
+			<td style=" text-align: center" colspan="2"><input type="submit" name="add" value="add" class="btn btn-success"></td>
+		</tr>
+		
+	</table>
+	{% endif%}
+	</CENTER>
+<center>
+	<h1>Add license category</h1>
+	<table class="table">
+		<tr>
+			<th>license Category</th>
+			<th>Amount</th>
+		</tr>
+		{% for i in data['view'] %}
+		<tr>
+			<td>{{i['licensecateg']}}</td>
+			<td>{{i['amount']}}</td>
+			<td><a href="?action=update&cid={{i['categid']}}" class="btn btn-success">update</a></td>
+			<td><a href="?action=delete&cid={{i['categid']}}" class=" btn btn-danger">Delete</a></td>
+		</tr>
+		{% endfor %}
+	</table>
+	</center>
+</form>
+
+{% include 'footer.html' %}

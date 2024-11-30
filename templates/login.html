@@ -1,0 +1,101 @@
+{% include 'public_header.html' %}
+
+	<head>
+    <title>Your Page Title</title>
+    <!-- <style>
+        /* Reset some default styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Center the content */
+        .content {
+            text-align: center;
+            padding: 50px;
+        }
+
+        /* Style the login form */
+        .login-form {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+
+        .login-form th, .login-form td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        .login-form input[type="text"],
+        .login-form input[type="password"],
+        .login-form input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .login-form input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+
+        .login-form input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style> -->
+
+    <style type="text/css">
+        th,td{
+            padding: 25px;
+        }
+    </style>
+</head>
+<body>
+    <pre>
+
+
+</pre>
+    <center>
+    <h1>Login</h1>
+        
+        <form  method="post">
+            <h2 style="color: black">LOGIN</h2>
+            <table>
+                <tr>
+                    <th>Username</th>
+                    <td><input type="text" name="uname" required="" class="form-control"></td>
+                </tr>
+                <tr>
+                    <th>Password</th>
+                    <td><input type="password" name="pass" required="" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td style="text-align: center" colspan="2"><input type="submit" name="login" value="Login" class="btn btn-success"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    {% if error_message %}
+         <p style="color: red;">{{ error_message }}</p>
+    {% endif %}
+</body>
+</center>
+
+<pre>
+
+
+
+
+
+</pre>
+
+{% include 'footer.html' %}
+
+

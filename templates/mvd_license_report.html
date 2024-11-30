@@ -1,0 +1,23 @@
+{%include 'mvd_header.html'%}
+<br><br><br>	
+<center>
+	<h1>License report</h1>
+	
+	<table class="table">
+		<tr>
+			<th>Name</th>
+			<th>License Number</th>
+			<th>Issued Date</th>
+			<th>Valid Upto</th>
+		</tr>
+		{% for i in data['view'] %}
+		<tr>
+			<td>{{i['first_name']}} {{i['last_name']}}</td>
+			<td>{{i['license_number']}}</td>
+			<td>{{i['issued_date']}}</td>
+			<td>{{i['valid_upto']}}</td>
+		</tr>
+		{% endfor %}
+	</table>
+	
+{% include 'footer.html' %}

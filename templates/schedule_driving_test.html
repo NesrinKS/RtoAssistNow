@@ -1,0 +1,66 @@
+{% include 'mvd_header.html' %}
+
+
+<h1 style="text-align: center;">Schedule Driving Test</h1>
+	<form method="post">
+		<table class="table">
+			<tr>
+				<th>Test date</th>
+				<td><input type="date" name="date" id="date" min="date('Y-m-d')" required="" class="form-control"></td>
+			</tr>
+			<tr>
+				<th>Test time</th>
+				<td><input type="time" name="time" required="" class="form-control"></td>
+			</tr>
+			<tr>
+				<td style="text-align: center;" colspan="2">
+				<input type="submit" name="schedule" value="schedule" class="btn btn-success">
+			</td>
+			</tr>
+		
+				
+		</table>
+		
+	</form>
+
+	<h2 style="text-align: center;">Driving test details</h2>
+	<table class="table">
+		<tr>
+			<th>Test Date</th>
+			<th>Test Time</th>
+			<th>Request id</th>
+			<th>Exam type</th>
+			<th>Status</th>
+		</tr>
+		{% for r in data['test'] %}
+		<tr>
+			<td>{{r['exam_date']}}</td>
+			<td>{{r['exam_time']}}</td>
+			<td>{{r['license_request_id']}}</td>
+			<td>{{r['exam_type']}}</td>
+			<td>{{r['Status']}}</td>
+			{%if r['Status']=="pending"%}
+			<td><a href="?action=pass&exam_id={{r['exam_id']}}&license_request_id={{r['license_request_id']}}&user_id={{r['user_id']}}" class="btn btn-success">Pass</a></td>
+			<td><a href="?action=fail&exam_id={{r['exam_id']}}&license_request_id={{r['license_request_id']}}" class="btn btn-danger">Fail</a></td>
+			{%endif%}
+			<!-- {%if r['Status']=="passed"%}
+			<td><a href="license?user_id={{r['user_id']}}&license_request_id={{r['license_request_id']}}" class="btn btn-success">license</a></td>
+			{% endif%} -->
+
+		
+			
+
+			
+		</tr>
+		
+		
+		{%endfor%}
+			
+		
+	</table>
+	
+ <script>
+        // JavaScript to set the minimum date to the current date
+        document.getElementById('date').setAttribute('min', new Date().toISOString().split("T")[0]);
+    </script>
+{% include 'footer.html' %}

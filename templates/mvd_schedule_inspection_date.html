@@ -1,0 +1,21 @@
+{% include 'mvd_header.html' %}
+<h1 style="text-align: center;">Schedule inspection date</h1>
+
+    <form method="POST">
+        <table class="table">
+            <tr>
+                <th>Date</th>
+                <td><input type="date" id="date" min="date('Y-m-d')" name="inspection_date" required="" class="form-control"></td>
+            </tr>
+            <tr>
+                <td style="text-align: center;" colspan="2"><input type="submit" name="schedule" value="OK" class="btn btn-success"></td>
+            </tr>
+        </table>
+
+
+ <script>
+        // JavaScript to set the minimum date to the current date
+        document.getElementById('date').setAttribute('min', new Date().toISOString().split("T")[0]);
+    </script>
+
+{% include 'footer.html' %}

@@ -1,0 +1,43 @@
+{% include 'user_header.html' %}
+<br><br>
+<h1 style="text-align: center;">License status</h1>
+<br><br>
+
+  <center>
+
+
+
+<!-- <h2 class="animate__animated animate__fadeInDown">View Exam Schedule </h2> -->
+
+
+<form method="post">
+
+<table class="table" style="width: 600px;">
+
+      <tr>
+      	<th>User Name</th>
+       <th>Date & Time</th>
+       <th>	Status</th>
+   
+      </tr>
+    {% for i in data['view']%}
+     <tr>	
+      <td>{{i['first_name']}} {{i['last_name']}}</td>
+     	<td>{{i['datetime']}}</td>
+     	<td>{{i['status']}}</td>
+      <td><a href="view_learners_schedule?license_request_id={{i['license_request_id']}}" class="btn btn-info"> Exam Status</a></td>
+
+          <td><a href="user_License_print?user_id={{i['user_id']}}" class="btn btn-info">License</a></td>
+
+
+   </tr>
+    {%endfor%}
+
+</table>
+   
+
+</center>
+
+<br><br><br><br><br>
+
+{% include 'footer.html' %}

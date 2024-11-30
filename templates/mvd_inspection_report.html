@@ -1,0 +1,47 @@
+{% include 'mvd_header.html'%}
+<br><br><br>	
+<center>
+	<h1>Inspection report</h1>
+	<form method="post">
+		<table class="table">
+			<tr>
+				<th>Search By Date</th>
+				<td><input type="date" name="l_date"  class="form-control" required=""></td>
+			</tr>
+			<tr>
+				<td style="text-align: center;" colspan="2"><input type="submit" name="i_date" class="btn btn-secondary"></td>
+			</tr>
+		</table>
+	</form>
+	<table class="table">
+			<tr>
+			<th>User name</th>
+			<th>Place</th>
+			<th>Vehicle type</th>
+			<th>Brand name</th>
+			<th>Model name</th>
+			<th>No.of seats</th>
+			<th>Color</th>
+			<th>Applied date</th>
+			<th>Fuel type</th>
+			<th>Inspection Date</th>
+			</tr>
+			{% for r in data['view'] %}
+			<tr>
+			<td>{{r['first_name']}}</td>
+			<td>{{r['place']}}</td>
+			<td>{{r['vehicle_type']}}</td>
+			<td>{{r['brand_name']}}</td>
+			<td>{{r['model_name']}}</td>
+			<td>{{r['no_of_seats']}}</td>
+			<td>{{r['color']}}</td>
+			<td>{{r['applied_date']}}</td>
+			<td>{{r['fuel_type']}}</td>
+			<td>{{r['inspection_date']}}</td>
+			</tr>
+			{%endfor%}
+		</table>
+	
+</center>
+
+{% include 'footer.html'%}

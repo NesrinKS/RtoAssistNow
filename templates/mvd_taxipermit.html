@@ -1,0 +1,51 @@
+{% include 'mvd_header.html' %}
+
+
+
+
+
+<div class="ex">
+<form method="post"  style="margin-bottom:-7em" class="animate__animated animate__fadeInUp">
+  <center>
+
+
+
+<h2 class="animate__animated animate__fadeInDown">Assign Taxi Permit </h2>
+   <h1></h1>
+    <table class="table" style="width: 500px;color: white">
+      <tr>
+        <th>from date </th>
+        <td><input type="date" name="fd" class="form-control" required="" class="form-control"></td>
+      </tr>
+      <tr>
+        <th>to date </th>
+        <td><input type="date" name="td" class="form-control" required="" class="form-control"></td>
+      </tr>
+      <tr>
+        <td align="center" colspan="2"><input type="submit" name="assign" value="assign" class="btn btn-success"></td>
+      </tr>
+    </table>
+  </center>
+  <center>
+    <h1>view taxi permit</h1>
+    <table class="table" style="width: 500px;">
+      <tr>
+        <th>From date</th>
+        <th>to date</th>
+      </tr>
+      {% for row in data['view']%}
+      <tr>
+        <td>{{row['from_date']}}</td>
+        <td>{{row['to_date']}}</td>
+      </tr>
+      {%endfor%}
+    </table>
+
+</center>
+</form>
+
+<br>  <br>  <br>  <br>  <br>  <br>  <br>  
+</div>
+
+
+{% include 'footer.html' %}

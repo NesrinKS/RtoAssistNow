@@ -1,0 +1,93 @@
+{% include 'user_header.html' %}
+
+
+<!-- <head>
+    <title>License Application</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 24px;
+            margin: 0 0 20px;
+            text-align: center; 
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        select, input[type="submit"] {
+            padding: 10px;
+            width: 100%;
+        }
+        a {
+            text-decoration: none;
+            color: #0070e0;
+        }
+    </style>
+</head>
+<body> -->
+    <div class="container">
+        <br><br>
+        <h1 style="text-align: center;">License Application</h1>
+        <form method="post">
+            <table class="table">
+                <tr>
+                    <th>License Type</th>
+                    <td>
+                        <select name="cat" required="" class="form-control">
+                            <option selected="" selected disabled hidden>Select</option>
+                            {% for i in data['cat'] %}
+                                <option value="{{i['categid']}}">{{i['licensecateg']}}</option>
+                            {% endfor %}
+                        </select>
+                    </td>
+                </tr>
+           <tr>
+           <td style="text-align: center;" colspan="2"> <input type="submit" name="submit" value="Send Request" class="btn btn-success"></td>
+            </tr>
+             </table>
+        </form>
+     
+
+        <h1 style="text-align: center;">Application Status</h1>
+        <table class="table">
+            <tr>
+                <th>Request Date</th>
+                <th>Request Status</th>
+                <th>Upload Files</th>
+            </tr>
+            {% for i in data['viewreq'] %}
+                <tr>
+                    <td>{{i['datetime']}}</td>
+                    <td>{{i['status']}}</td>
+                    <td><a href="user_upload_files?req_id={{i['license_request_id']}}" class="btn btn-info">Upload Files</a></td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+<br><br><br><br>
+{% include 'footer.html' %}

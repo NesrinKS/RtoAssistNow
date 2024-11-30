@@ -1,0 +1,28 @@
+{% include 'user_header.html' %}
+
+
+
+	<h1>Driving Test Schedule</h1>
+	<form method="post">
+		<table border="1">
+			
+			<tr>
+				<th>Exam Date</th>
+				<th>Exam type</th>
+				<th>Status</th>
+			</tr>
+			{% for r in data['test'] %}
+			<tr>
+				<td>{{r['exam_date']}}</td>
+				<td>{{r['exam_time']}}</td>
+				<td>{{r['status']}}</td>
+			</tr>
+			{%endfor%}
+			
+
+		</table>
+		
+	</form>
+
+
+{% include 'footer.html' %}

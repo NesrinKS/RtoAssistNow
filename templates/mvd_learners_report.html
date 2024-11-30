@@ -1,0 +1,33 @@
+{% include 'mvd_header.html'%}
+<br><br><br><br>	
+
+<center>
+	<h1>Learners Report</h1>
+<form method="post">	
+	<table class="table">
+		<tr>
+			<th>Search By Date</th>
+			<td><input type="date" name="l_date"  class="form-control" required=""></td>
+		</tr>
+		<tr>
+			<td style="text-align: center;" colspan="2"><input type="submit" name="s_lern" class="btn btn-secondary"></td>
+		</tr>
+		<tr>
+			<th>Name</th>
+			<th>Place</th>
+			<th>Exam Date</th>
+			<th>Exam Time</th>
+		</tr>
+		{% for i in data['view']%}
+		<tr>
+			<td>{{i['first_name']}} {{i['last_name']}}</td>
+			<td>{{i['place']}}</td>
+			<td>{{i['exam_date']}}</td>
+			<td>{{i['exam_time']}}</td>
+		</tr>
+		{%endfor%}
+	</table>
+</form>
+</center>
+
+{% include 'footer.html'%}

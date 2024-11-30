@@ -1,0 +1,38 @@
+{% include 'mvd_header.html' %}
+<h1 style="text-align: center;">Uploaded documents</h1>
+<table class="table">
+	<tr>
+		
+		<th>Id proof</th>
+		<th>Photo</th>
+		<th>Birth certificate</th>
+		<th>Education certificate</th>
+		<th>Medical certificate</th>
+	</tr>
+
+	{% for r in data['view'] %}
+	<tr>
+		<td><a href="{{r['id_proof']}}" download="">id proof</a></td>
+		<td><a href="{{r['photo']}}" download="">photo</td>
+		<td><a href="{{r['birth certificate']}}" download="">birth certificate</td>
+		<td><a href="{{r['education_certificate']}}" download="">education_certificate</td>
+		<td><a href="{{r['medical_certificate']}}" download="">medical certificate</td>
+	</tr>
+	{%endfor%}
+	
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% include 'footer.html' %}

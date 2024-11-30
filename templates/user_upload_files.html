@@ -1,0 +1,89 @@
+{% include 'user_header.html' %}
+
+<!-- <html>
+<head>
+    <title>Upload Files</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 24px;
+            margin: 0 0 20px;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        input[type="file"] {
+            padding: 5px;
+            width: 100%;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #0070e0;
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0052a6;
+        }
+    </style>
+</head>
+<body> -->
+    <div class="container">
+        <h1 style="text-align: center;">Upload Files</h1>
+        <form method="post" enctype="multipart/form-data">
+            <table class="table">
+                <tr>
+                    <th>Id Proof</th>
+                    <td><input type="file" name="idproof" accept=".pdf, .doc, .docx" required="" class="form-control"></td>
+                </tr>
+                <tr>
+                    <th>Passport Size Photo</th>
+                    <td><input type="file" name="photo" accept=".pdf, .doc, .docx" required="" class="form-control"></td>
+                </tr>
+                <tr>
+                    <th>Birth Certificate</th>
+                    <td><input type="file" name="birth" accept=".pdf, .doc, .docx" required="" class="form-control"></td>
+                </tr>
+                <tr>
+                    <th>Education Certificate</th>
+                    <td><input type="file" name="education" accept=".pdf, .doc, .docx" required="" class="form-control"></td>
+                </tr>
+                <tr>
+                    <th>Medical Certificate</th>
+                    <td><input type="file" name="medical" accept=".pdf, .doc, .docx" required="" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center;" colspan="2"><input type="submit" name="submit" value="Submit" class="btn btn-success"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+
+{% include 'footer.html' %}

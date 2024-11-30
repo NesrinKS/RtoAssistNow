@@ -1,0 +1,26 @@
+{% include 'mvd_header.html' %}
+
+<h1 style="text-align: center;">Vehicle number verification</h1>
+<form>
+	<table class="table">
+		<tr>
+			<th>Vehicle id</th>
+			<th>Number</th>
+			<th>Status</th>
+		</tr>
+		{% for r in data['view'] %}
+		<tr>
+			<td>{{r['vehicle_id']}}</td>
+			<td>{{r['vehicle_number']}}</td>
+			<td>{{r['number_status']}}</td>
+			{%if r['number_status']=="pending"%}
+			<td><a href="?action=approve&vehicle_id={{r['vehicle_id']}}" class="btn btn-success">Approve</a></td>
+			<td><a href="?action=reject&vehicle_id={{r['vehicle_id']}}" class="btn btn-danger">Reject</a></td>
+			{%endif%}
+		</tr>
+		{%endfor%}
+	</table>
+</form>
+
+
+{% include 'footer.html' %}

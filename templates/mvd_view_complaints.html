@@ -1,0 +1,32 @@
+{% include 'mvd_header.html' %}
+
+<h1 style="text-align: center;">View Complaints</h1>
+
+<form method="post">
+	<table class="table">
+		<tr>
+			<th>Description</th>
+			<th>Datetime</th>
+			<th>Reply</th>
+			
+		</tr>
+		{% for r in data['comp'] %}
+		<tr>
+			<td>{{r['desc']}}</td>
+			<td>{{r['datetime']}}</td>
+			<td>{{r['reply']}}</td>
+			{% if r ['reply']=='pending' %}
+			<td style="text-align: center;" colspan="2"><a href="mvd_send_reply?cid={{r['complaint_id']}}" class="btn btn-success">Reply</a></td>
+			{% endif%}
+
+			
+		</tr>
+		
+		{%endfor%}
+
+	</table>
+
+</form>
+
+{% include 'footer.html' %}
+

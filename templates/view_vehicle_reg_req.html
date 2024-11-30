@@ -1,0 +1,48 @@
+{% include 'mvd_header.html' %}
+
+<h1 style="text-align: center;">Vehicle Registration Requests</h1>
+
+<form method="post">
+	<table class="table">
+		<tr>
+			<th>User name</th>
+			<th>Place</th>
+			<th>Vehicle type</th>
+			<th>Brand name</th>
+			<th>Model name</th>
+			<th>No.of seats</th>
+			<th>Color</th>
+			<th>Applied date</th>
+			<th>Fuel type</th>	
+			
+			
+		</tr>
+		{% for r in data['vehicle'] %}
+		<tr>
+			<td>{{r['first_name']}}</td>
+			<td>{{r['place']}}</td>
+			<td>{{r['vehicle_type']}}</td>
+			<td>{{r['brand_name']}}</td>
+			<td>{{r['model_name']}}</td>
+			<td>{{r['no_of_seats']}}</td>
+			<td>{{r['color']}}</td>
+			<td>{{r['applied_date']}}</td>
+			<td>{{r['fuel_type']}}</td>
+
+			{% if r['inspection_date']=='pending' %}
+			<td><a href="mvd_schedule_inspection_date?vid={{r['vehicle_id']}}" class="btn btn-info">	 inspection</a></td>
+			{% endif%}
+			
+			{%if r['number_status']=="pending"%}
+			<td><a href="mvd_assign_number?action=approve&vehicle_id={{r['vehicle_id']}}" class="btn btn-success">Approve</a></td>
+			<td><a href="?action=reject&vehicle_id={{r['vehicle_id']}}" class="btn btn-danger">Reject</a></td>
+			{%endif%}
+		</tr>
+		{%endfor%}
+
+		
+	</table>
+</form>
+<br><br><br><br>
+{% include 'footer.html' %}
+

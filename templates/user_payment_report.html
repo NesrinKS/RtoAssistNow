@@ -1,0 +1,19 @@
+{% include 'user_header.html'%}
+<center><br><br>
+	<h1>Payment</h1><br><br>
+	<table class="table">
+		<tr>
+			<th>Type</th>
+			<th>Amount</th>
+			<th>Date</th>
+		</tr>
+		{% for i in data['view']%}
+		<tr>
+			<td>{{i['type']}}</td>
+			<td>{{i['amount']}}</td>
+			<td>{{i['date']}}</td>
+		</tr>
+		{% endfor%}
+	</table>
+</center>
+{% include 'footer.html'%}
